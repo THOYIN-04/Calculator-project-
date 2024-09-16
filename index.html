@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: pink;
+    }
+    #cal{
+        width: 35%;
+        background-color: white;
+        border: 1px solid black;
+        margin: 50px auto;
+        padding: 20px 10px;
+        
+    }
+    #all{
+        width: 100%;
+        
+    }
+    #inputs{
+        display: flex;
+        justify-content: center;
+        gap: 10px ;
+        
+    }
+    #in-1{
+        width: 39%;
+        height: 50px;
+        background-color: white;
+        outline: none;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 600;
+        font-family: sans-serif;
+        border-radius: 5px;
+    }
+    #in-2{
+        width: 39%;
+        height: 50px;
+        background-color: white;
+        outline: none;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 600;
+        font-family: sans-serif;
+        border-radius: 5px;
+    }
+    #cal2{
+        width: 80%;
+        height: 100%;
+        margin-top: 30px;
+        display: flex;
+        margin: 10px 44px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 600;
+        font-family: sans-serif;
+    
+        
+    }
+    button{
+        width: 90%;
+        height: 50px;
+        border: 1px solid black;
+        background-color: white;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: 700;
+        gap: 5px;
+        
+    }
+    #but{
+        gap: 3px;
+    }
+    #result{
+        height: 300px;
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding-top: 110px;
+        font-size: 40px;
+        font-weight: 700;
+        font-family: sans-serif;
+    
+    }
+    #little{
+        font-size: 50px;
+        font-weight: 800;
+        font-family: sans-serif;
+        color: brown;
+        padding: 20px 0 0 270px;
+    }
+   
+
+</style>
+<body>
+    
+        <div id="all">
+            <div id="all">
+                <div id="little">
+                    <h1 id="little">Little Cal</h1>
+                </div>
+                <div id="cal">
+                    <div id="inputs">
+                        <input type="text" id="in-1" placeholder="">
+                        <input type="text" id="in-2" placeholder="">
+                    </div>
+                    <div id="cal2">
+                        <div id="but">
+                            
+                           <button onclick="operation('+')">+</button>
+                           <button onclick="operation('*')">*</button>
+                           <button onclick="operation('/')">/</button>
+                           <button onclick="operation('-')">-</button>
+                           <button onclick="operation('**')">**</button>
+                           <button onclick="operation('%')">%</button>
+
+                        </div>
+                        <div id="result">
+
+                        </div>
+                        
+
+
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+
+    
+</body>
+</html>
+<script>
+    function operation(sign) {
+        let firstNumber = document.getElementById('in-1').value
+        let secondNumber = document.getElementById('in-2').value
+        let result = document.getElementById('result')
+
+
+        if (sign==="+") {
+            result.innerHTML= Number( firstNumber) + Number(secondNumber)
+            
+        }else if ( sign==="/") {
+            result.innerHTML= Number(firstNumber) / Number(secondNumber)
+        }else if ( sign==="-") {
+            result.innerHTML= Number(firstNumber) - Number(secondNumber)
+        }else if ( sign==="**") {
+            result.innerHTML= Number(firstNumber) ** Number(secondNumber)
+        }else if ( sign==="%") {
+            result.innerHTML= Number(firstNumber) % Number(secondNumber)
+        }else {
+            result.innerHTML= Number(firstNumber) * Number(secondNumber);
+        }
+
+
+    }    
+
+</script>
